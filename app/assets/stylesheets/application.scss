@@ -15,3 +15,29 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+a {
+
+}
+a:hover {
+    -webkit-transition: all 0.15s ease-out;
+    -moz-transition: all 0.15s ease-out;
+    transition: all 0.15s ease-out;
+    text-decoration: none;
+    outline: none;
+    background-color: inherit;
+}
+
+body {
+    .container.wrapper {
+        margin-top: 150px;
+    }
+}
+#header {
+    .logo {
+        float: left;
+    }
+    .main-nav.navbar-right {
+        margin-top: 15px;
+    }
+}

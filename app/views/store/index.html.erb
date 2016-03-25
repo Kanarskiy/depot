@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Products</h1>
+
+<table class="table table-bordered table-hover">
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th colspan="1"></th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% cache ['store', Product.latest] do %>
+        <% @products.each do |product| %>
+            <% cache ['entry', product] do %>
+                <tr class="product">
+                    <td><%= product.title %></td>
+                    <td><%= sanitize(product.description) %></td>
+                    <td class="price"><%= number_to_currency(product.price) %></td>
+                    <td><%= link_to 'Show', product %></td>
+                </tr>
+            <% end %>
+        <% end %>
+    <% end %>
+    </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Product', new_product_path %>

@@ -37,11 +37,11 @@ class ProductTest < ActiveSupport::TestCase
         # уже было использовано
     end
 
-    test "product is not valid without a unique title - i18n" do
-        product = Product.new(title: products(:ruby).title,
-                              description: "yyy",
-                              price: 1)
-        assert product.invalid?
-        assert_equal [I18n.translate('activerecord.errors.messages.taken')], product.errors[:title]
-    end
+    # test "product is not valid without a unique title - i18n" do
+    #     product = Product.new(title: products(:ruby).title,
+    #                           description: "yyy",
+    #                           price: 1)
+    #     assert product.invalid?
+    #     assert_equal [I18n.translate('activerecord.errors.messages.taken')], product.errors[:title]
+    # end
 end
