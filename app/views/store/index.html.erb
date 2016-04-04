@@ -9,6 +9,7 @@
         <th>Description</th>
         <th>Price</th>
         <th colspan="1"></th>
+        <th colspan="1"></th>
     </tr>
     </thead>
 
@@ -21,6 +22,7 @@
                     <td><%= sanitize(product.description) %></td>
                     <td class="price"><%= number_to_currency(product.price) %></td>
                     <td><%= link_to 'Show', product %></td>
+                    <td><%= button_to 'Add to Cart', line_items_path(product_id: product), class: 'button btn-primary' %></td>
                 </tr>
             <% end %>
         <% end %>
